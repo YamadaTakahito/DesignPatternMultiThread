@@ -3,13 +3,14 @@
  */
 package DesignPatternMultiThread;
 
-import DesignPatternMultiThread.chap1.Chap1;
+import DesignPatternMultiThread.chap2.Chap2;
 
 public class App {
     public static void main(String[] args) {
 //        var intro = new Intro();
 //        intro.main();
 
-        Chap1.main();
+//        Chap1.main();
+        Chap2.main();
     }
 }
