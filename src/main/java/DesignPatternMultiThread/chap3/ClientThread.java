@@ -20,6 +20,7 @@ public class ClientThread extends Thread {
             try {
                 Thread.sleep(random.nextInt(1000));
             } catch (InterruptedException ignored) {
+                throw new RuntimeException(ignored);
             }
         }
     }
