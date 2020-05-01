@@ -21,17 +21,28 @@ public class Data {
 
     public synchronized void save() throws IOException {
         if (!changed) {
+            System.out.println(Thread.currentThread().getName() + " balked");
             return;
         }
         this.doSave();
         changed = false;
     }
 
-    private void doSave() throws IOException {
+    private synchronized void doSave() throws IOException {
         System.out.println(Thread.currentThread().getName() + " calls doSave, content = " + this.content);
+
+//        var oldContent = new BufferedReader(new FileReader(this.filename)).readLine();
+//        if (oldContent.equals(this.content)) {
+//            System.out.println("unnecessary save");
+//        }
+
         var writer = new FileWriter(this.filename);
         writer.write(this.content);
         writer.close();
+
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException ignored) {}
     }
 
 }
