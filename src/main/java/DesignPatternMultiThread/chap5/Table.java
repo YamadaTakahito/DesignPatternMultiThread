@@ -25,7 +25,8 @@ public class Table {
         this.buffer[this.tail] = cake;
         this.tail = (this.tail + 1) % this.buffer.length;
         this.count++;
-        notifyAll();
+//        notifyAll();
+        notify();
     }
 
     public synchronized String take() throws InterruptedException {
@@ -36,7 +37,8 @@ public class Table {
         var cake = this.buffer[head];
         this.head = (this.head + 1) % this.buffer.length;
         this.count--;
-        notifyAll();
+//        notifyAll();
+        notify();
         System.out.println(Thread.currentThread().getName() + " takes " + cake);
         return cake;
     }
