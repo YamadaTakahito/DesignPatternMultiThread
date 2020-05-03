@@ -25,6 +25,10 @@ public class Data {
         }
     }
 
+//    public synchronized char[] read() throws InterruptedException {
+//        return doRead();
+//    }
+
     public void write(char c) throws InterruptedException {
         lock.writeLock();
 //        this.writeLock.lock();
@@ -35,6 +39,10 @@ public class Data {
 //            this.writeLock.unlock();
         }
     }
+
+//    public synchronized void write(char c) throws InterruptedException {
+//        doWrite(c);
+//    }
 
     private char[] doRead() {
         var newbuf = new char[this.buffer.length];

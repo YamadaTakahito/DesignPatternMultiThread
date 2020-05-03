@@ -13,6 +13,14 @@ public class WriterThread extends Thread {
         this.filler = filler;
     }
 
+//    public void run() {
+//        try {
+//            for (int i = 0; i < this.filler.length(); i++) {
+//                data.write(this.filler.charAt(i));
+//            }
+//        } catch (InterruptedException ignored) {}
+//    }
+
     public void run() {
         try {
             while (true) {
