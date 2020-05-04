@@ -3,7 +3,7 @@
  */
 package DesignPatternMultiThread;
 
-import DesignPatternMultiThread.chap7.Chap7;
+import DesignPatternMultiThread.chap8.Chap8;
 
 public class App {
     public static void main(String[] args) {
@@ -16,6 +16,7 @@ public class App {
 //        Chap4.main();
 //        Chap5.main();
 //        Chap6.main();
-        Chap7.main();
+//        Chap7.main();
+        Chap8.main();
     }
 }
