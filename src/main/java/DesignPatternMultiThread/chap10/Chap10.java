@@ -1,23 +1,25 @@
 package DesignPatternMultiThread.chap10;
 
+import DesignPatternMultiThread.chap10.practice.HanoiThread;
+
 public class Chap10 {
     public static void main() {
-        System.out.println("main: START");
-        try {
-            var t = new CountupThread();
-            t.start();
-
-            Thread.sleep(10000);
-
-            System.out.println("main: shutdownRequest");
-            t.shutdownRequest();
-
-            System.out.println("main: join");
-
-            t.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        System.out.println("main: START");
+//        try {
+//            var t = new CountupThread();
+//            t.start();
+//
+//            Thread.sleep(10000);
+//
+//            System.out.println("main: shutdownRequest");
+//            t.shutdownRequest();
+//
+//            System.out.println("main: join");
+//
+//            t.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
 //        Thread.setDefaultUncaughtExceptionHandler(
 //                (t, e) -> {
@@ -99,6 +101,24 @@ public class Chap10 {
 //            System.out.println("END");
 //        }
 //        System.out.println("END");
+
+//        new MyFrame();
+
+        try {
+            var t = new HanoiThread();
+            t.start();
+
+            Thread.sleep(10000);
+
+            System.out.println("main: shutdownRequest");
+            t.shutdownRequest();
+
+            System.out.println("main: join");
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("main: END");
     }
 
 }
